@@ -23,9 +23,18 @@ st.markdown(
 
 # Título com um estilo mais destacado
 st.title("Gestor Financeiro 💰")
+st.markdown("""
+### Bem-vindo à tua aplicação de gestão financeira pessoal!
 
-page = st.selectbox("Escolha uma opção", ["Início", "Adicionar Movimento", "Histórico de Movimentos"])
+Usa o menu na barra lateral para navegar pelas funcionalidades da aplicação:
+- **Adicionar movimentos**: Registra as tuas receitas e despesas.
+- **Ver histórico**: Consulta o histórico completo dos teus movimentos financeiros.
+""")
 
+# Sidebar para navegação
+page = st.sidebar.selectbox("Escolha uma opção", ["Início", "Adicionar Movimento", "Histórico de Movimentos"])
+
+# Condicionais para redirecionar o usuário para as páginas
 if page == "Início":
     st.markdown("""
     ### O que podes fazer aqui:
@@ -35,7 +44,7 @@ if page == "Início":
     """)
 
 elif page == "Adicionar Movimento":
-
+    # Adiciona o código para a página de adicionar receitas/despesas
     import streamlit as st
     from db.database import insert_transaction
     from utils.helpers import get_categories
@@ -71,14 +80,3 @@ elif page == "Histórico de Movimentos":
         st.info("Ainda não há movimentos registados.")
     else:
         st.dataframe(df.drop(columns="ID"), use_container_width=True)
-
-# Divisão da página em colunas para um layout mais limpo
-col1, col2 = st.columns([1, 2])
-
-with col1:
-    # Adiciona alguns botões com ícones ou emojis para interações rápidas
-    st.button("Adicionar Receita/Despesas 🏦")
-
-# Botão de histórico (na parte inferior da tela)
-if st.button("Ver Histórico de Movimentos 📜"):
-    st.write("Aqui estará o histórico de todos os teus movimentos financeiros.")
