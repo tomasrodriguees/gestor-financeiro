@@ -38,10 +38,10 @@ st.markdown(
 st.title("Wallet Tomás Rodrigues 💰")
 
 # Sidebar para navegação
-page = st.sidebar.selectbox("Escolha uma opção", ["Início", "Adicionar Movimento", "Histórico de Movimentos"])
+pages = st.sidebar.selectbox("Escolha uma opção", ["Início", "Adicionar Movimento", "Histórico de Movimentos"])
 
 # Condicionais para redirecionar o usuário para as páginas
-if page == "Início":
+if pages == "Início":
     st.markdown("""
     ### O que podes fazer aqui:
     - **Adicionar receitas** quando receberes dinheiro.
@@ -49,7 +49,7 @@ if page == "Início":
     - Ver um **resumo do teu saldo** e categorias de movimentação.
     """)
 
-elif page == "Adicionar Movimento":
+elif pages == "Adicionar Movimento":
     # Adiciona o código para a página de adicionar receitas/despesas
     
     st.write("## Adicionar Movimento")
@@ -57,7 +57,7 @@ elif page == "Adicionar Movimento":
     Esta página permite adicionar movimentos financeiros, como receitas ou despesas.
     """)
 
-elif page == "Histórico de Movimentos":
+elif pages == "Histórico de Movimentos":
     # Adiciona o código para a página de histórico
     st.write("## Histórico de Movimentos")
     st.markdown("""
