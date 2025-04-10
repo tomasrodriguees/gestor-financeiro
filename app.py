@@ -12,24 +12,31 @@ st.markdown(
     """
     <style>
         body {
-
-            font-family: 'Roboto', sans-serif;
-            
-            background-color: #333333;  /* Cor cinza suave */
-            color: white;  /* Texto em branco para contraste */
-        }
-        .css-1d391kg {  /* Mudança no estilo do título para destacar melhor */
-            color: #F5A623;
+            font-size: 16px;
         }
         .stButton>button {
-            background-color: #FF6347;
-            color: white;
+            background-color: #FF6347;  /* Cor de fundo para os botões */
+            color: white;  /* Cor do texto no botão */
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 14px;  /* Ajusta o tamanho da fonte dos botões */
+        }
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;  /* Ajusta o tamanho da fonte no mobile */
+            }
+            .stButton>button {
+                font-size: 12px;  /* Ajusta o tamanho da fonte nos botões */
+            }
         }
     </style>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True
+)
 
 # Título com um estilo mais destacado
-st.title("Gestor Financeiro 💰")
+st.title("Wallet Tomás Rodrigues 💰")
+
 st.markdown("""
 ### Bem-vindo à tua aplicação de gestão financeira pessoal!
 
