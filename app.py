@@ -1,11 +1,11 @@
 import streamlit as st
 from db.database import init_db
 
-# Configuração da página
-st.set_page_config(page_title="Gestor Financeiro", page_icon="💰", layout="centered")
-
 # Inicia o banco de dados
 init_db()
+
+# Configuração da página
+st.set_page_config(page_title="Gestor Financeiro", page_icon="💰", layout="centered")
 
 # Adiciona um estilo CSS para configurar a cor de fundo
 st.markdown(
