@@ -12,10 +12,17 @@ st.markdown(
     """
     <style>
         body {
-            background-color: #2e2e2e;  /* Cor cinza suave */
+
+            font-family: 'Roboto', sans-serif;
+            
+            background-color: #333333;  /* Cor cinza suave */
             color: white;  /* Texto em branco para contraste */
         }
         .css-1d391kg {  /* Mudança no estilo do título para destacar melhor */
+            color: #F5A623;
+        }
+        .stButton>button {
+            background-color: #FF6347;
             color: white;
         }
     </style>
