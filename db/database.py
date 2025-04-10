@@ -38,7 +38,7 @@ def insert_transaction(tipo, valor, categoria, data, notas, conta_id):
     cursor.execute('''
         INSERT INTO transactions (tipo, valor, categoria, data, notas, Conta_ID)
         VALUES (?, ?, ?, ?, ?, ?)
-    ''', (tipo, valor, categoria, data, notas, conta_id))  # Corrigido para enviar os valores corretamente
+    ''', (tipo, valor, categoria, data, notas, conta_id))
     conn.commit()
     conn.close()
 
