@@ -5,7 +5,7 @@ st.set_page_config(page_title="Gestor Financeiro", layout="centered")
 
 init_db()
 
-st.title("💰 Gestor Financeiro Pessoal")
+st.title("Wallet 💰")
 st.markdown("""
 Bem-vindo à tua aplicação de gestão financeira pessoal.  
 Usa o menu à esquerda para:
