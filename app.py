@@ -36,20 +36,8 @@ col1, col2 = st.columns([1, 2])
 
 with col1:
     # Adiciona alguns botões com ícones ou emojis para interações rápidas
-    st.button("Adicionar Receita 🏦")
-    st.button("Adicionar Despesa 💳")
-    
-with col2:
-    # Exibe um resumo simples ou uma introdução à funcionalidade
-    st.markdown("""
-    ### O que podes fazer aqui:
-    - **Adicionar receitas** quando receberes dinheiro.
-    - **Adicionar despesas** para controlar os teus gastos.
-    - Ver um **resumo do teu saldo** e categorias de movimentação.
-    """)
+    st.button("Adicionar Receita/Despesas 🏦")
 
 # Botão de histórico (na parte inferior da tela)
 if st.button("Ver Histórico de Movimentos 📜"):
     st.write("Aqui estará o histórico de todos os teus movimentos financeiros.")
-
-    
