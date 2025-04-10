@@ -37,14 +37,6 @@ st.markdown(
 # Título com um estilo mais destacado
 st.title("Wallet Tomás Rodrigues 💰")
 
-st.markdown("""
-### Bem-vindo à tua aplicação de gestão financeira pessoal!
-
-Usa o menu na barra lateral para navegar pelas funcionalidades da aplicação:
-- **Adicionar movimentos**: Registra as tuas receitas e despesas.
-- **Ver histórico**: Consulta o histórico completo dos teus movimentos financeiros.
-""")
-
 # Sidebar para navegação
 page = st.sidebar.selectbox("Escolha uma opção", ["Início", "Adicionar Movimento", "Histórico de Movimentos"])
 
