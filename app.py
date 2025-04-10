@@ -51,38 +51,19 @@ if page == "Início":
 
 elif page == "Adicionar Movimento":
     # Adiciona o código para a página de adicionar receitas/despesas
-    import streamlit as st
-    from db.database import insert_transaction
-    from utils.helpers import get_categories
-    from datetime import date
+    
+    st.write("## Adicionar Movimento")
+    st.markdown("""
+    Esta página permite adicionar movimentos financeiros, como receitas ou despesas.
+    """)
 
-    st.title("➕ Adicionar Movimento")
-
-    with st.form("add_form"):
-        type_ = st.selectbox("Tipo", ["Receita", "Despesa"])
-        amount = st.number_input("Valor", min_value=0.0, format="%.2f")
-        category = st.selectbox("Categoria", get_categories())
-        date_input = st.date_input("Data", value=date.today())
-        notes = st.text_input("Notas (opcional)")
-
-        submitted = st.form_submit_button("Adicionar")
-
-        if submitted and amount > 0:
-            insert_transaction(type_, amount, category, str(date_input), notes)
-            st.success("Movimento adicionado com sucesso!")
+    st.experimental_rerun()
 
 elif page == "Histórico de Movimentos":
     # Adiciona o código para a página de histórico
-    import streamlit as st
-    import pandas as pd
-    from db.database import get_all_transactions
-
-    st.title("📄 Histórico de Movimentos")
-
-    data = get_all_transactions()
-    df = pd.DataFrame(data, columns=["ID", "Tipo", "Valor", "Categoria", "Data", "Notas"])
-
-    if df.empty:
-        st.info("Ainda não há movimentos registados.")
-    else:
-        st.dataframe(df.drop(columns="ID"), use_container_width=True)
+    st.write("## Histórico de Movimentos")
+    st.markdown("""
+    Esta página mostra todos os movimentos financeiros registados.
+    """)
+    # Ao utilizar multi-páginas, não é necessário duplicar o código aqui
+    st.experimental_rerun()
