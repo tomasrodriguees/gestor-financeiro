@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 from db.database import get_all_transactions
 
-st.set_page_config(page_title="Dashboard", layout="wide")
+st.set_page_config(page_title="DASHBOARD", layout="wide")
 st.title("📊 Dashboard Financeiro")
 
 # 👉 Carregar dados da base de dados

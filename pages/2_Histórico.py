@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from db.database import get_all_transactions
 
-st.title("📄 Histórico de Movimentos")
+st.title("📄 HISTÓRICO DE MOVIMENTOS")
 
 data = get_all_transactions()
 df = pd.DataFrame(data, columns=["ID", "Tipo", "Valor", "Categoria", "Data", "Notas"])

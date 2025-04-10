@@ -3,7 +3,7 @@ from db.database import insert_transaction
 from utils.helpers import get_categories
 from datetime import date
 
-st.title("➕ Adicionar Movimento")
+st.title("➕ ADICIONAR MOVIMENTOS")
 
 with st.form("add_form"):
     type_ = st.selectbox("Tipo", ["Receita", "Despesa"])

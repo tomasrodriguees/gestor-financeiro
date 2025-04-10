@@ -4,7 +4,7 @@ from db.database import insert_transaction, get_all_transactions
 from datetime import date
 
 # Página de Conta Principal
-st.title("💼 Conta Principal")
+st.title("💼 CONTAS")
 
 # Obter todos os movimentos registados
 data = get_all_transactions()
