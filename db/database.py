@@ -36,3 +36,35 @@ def get_all_transactions():
     data = cursor.fetchall()
     conn.close()
     return data
+
+
+def init_contas():
+    conn = sqlite3.connect('db/database.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS contas (
+            id INTEGER PRIMARY KEY,
+            nome TEXT NOT NULL,
+            tipo TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+def insert_conta(nome, tipo):
+    conn = sqlite3.connect('db/database.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO contas (nome, tipo) 
+        VALUES (?, ?)
+    ''', (nome, tipo))
+    conn.commit()
+    conn.close()
+
+def get_all_contas():
+    conn = sqlite3.connect('db/database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM contas')
+    contas = cursor.fetchall()
+    conn.close()
+    return contas
