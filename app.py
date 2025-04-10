@@ -57,8 +57,6 @@ elif page == "Adicionar Movimento":
     Esta página permite adicionar movimentos financeiros, como receitas ou despesas.
     """)
 
-    st.experimental_rerun()
-
 elif page == "Histórico de Movimentos":
     # Adiciona o código para a página de histórico
     st.write("## Histórico de Movimentos")
@@ -66,4 +64,3 @@ elif page == "Histórico de Movimentos":
     Esta página mostra todos os movimentos financeiros registados.
     """)
     # Ao utilizar multi-páginas, não é necessário duplicar o código aqui
-    st.experimental_rerun()
