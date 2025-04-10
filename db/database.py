@@ -33,7 +33,7 @@ def init_db():
     conn.close()
 
 def insert_transaction(tipo, valor, categoria, data, notas, conta_id):
-    conn = sqlite3.connect('db/database.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('''
         INSERT INTO transactions (tipo, valor, categoria, data, notas, Conta_ID)
@@ -52,7 +52,7 @@ def get_all_transactions():
 
 
 def init_contas():
-    conn = sqlite3.connect('db/database.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS contas (
@@ -65,7 +65,7 @@ def init_contas():
     conn.close()
 
 def insert_conta(nome, tipo):
-    conn = sqlite3.connect('db/database.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('''
         INSERT INTO contas (nome, tipo) 
@@ -75,7 +75,7 @@ def insert_conta(nome, tipo):
     conn.close()
 
 def get_all_contas():
-    conn = sqlite3.connect('db/database.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM contas')
     contas = cursor.fetchall()
@@ -83,7 +83,7 @@ def get_all_contas():
     return contas
 
 def get_saldo_conta(conta_id):
-    conn = sqlite3.connect('db/database.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('SELECT SUM(Valor) FROM transactions WHERE Conta_ID = ?', (conta_id,))
     saldo = cursor.fetchone()[0]
